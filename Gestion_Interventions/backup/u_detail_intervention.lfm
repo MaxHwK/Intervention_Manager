@@ -1,0 +1,371 @@
+object f_detail_intervention: Tf_detail_intervention
+  Left = 534
+  Height = 720
+  Top = 213
+  Width = 920
+  Caption = 'f_detail_intervention'
+  ClientHeight = 720
+  ClientWidth = 920
+  LCLVersion = '1.8.4.0'
+  object pnl_titre: TPanel
+    Left = 0
+    Height = 50
+    Top = 0
+    Width = 920
+    Align = alTop
+    TabOrder = 0
+  end
+  object pnl_btn: TPanel
+    Left = 0
+    Height = 50
+    Top = 670
+    Width = 920
+    Align = alBottom
+    ClientHeight = 50
+    ClientWidth = 920
+    TabOrder = 1
+    object btn_retour: TButton
+      Left = 832
+      Height = 25
+      Top = 16
+      Width = 75
+      Caption = 'Retour liste'
+      TabOrder = 0
+    end
+  end
+  object pnl_detail: TPanel
+    Left = 0
+    Height = 620
+    Top = 50
+    Width = 920
+    Align = alClient
+    ClientHeight = 620
+    ClientWidth = 920
+    TabOrder = 2
+    object pnl_ident: TPanel
+      Left = 1
+      Height = 100
+      Top = 1
+      Width = 918
+      Align = alTop
+      ClientHeight = 100
+      ClientWidth = 918
+      TabOrder = 0
+      object lbl_num: TLabel
+        Left = 104
+        Height = 15
+        Top = 8
+        Width = 42
+        Caption = 'numéro'
+        ParentColor = False
+      end
+      object lbl_le: TLabel
+        Left = 216
+        Height = 15
+        Top = 8
+        Width = 9
+        Caption = 'le'
+        ParentColor = False
+      end
+      object lbl_de: TLabel
+        Left = 320
+        Height = 15
+        Top = 8
+        Width = 13
+        Caption = 'de'
+        ParentColor = False
+      end
+      object lbl_a: TLabel
+        Left = 432
+        Height = 15
+        Top = 8
+        Width = 6
+        Caption = 'à'
+        ParentColor = False
+      end
+      object lbl_maj: TLabel
+        Left = 504
+        Height = 15
+        Top = 24
+        Width = 58
+        Caption = 'mise à jour'
+        ParentColor = False
+      end
+      object edt_num: TEdit
+        Left = 80
+        Height = 23
+        Top = 24
+        Width = 80
+        AutoSize = False
+        CharCase = ecUppercase
+        TabOrder = 0
+      end
+      object edt_dt: TDateTimePicker
+        Left = 168
+        Height = 23
+        Top = 24
+        Width = 100
+        CenturyFrom = 1941
+        MaxDate = 2958465
+        MinDate = -53780
+        AutoSize = False
+        TabOrder = 1
+        TrailingSeparator = False
+        TextForNullDate = 'NULL'
+        LeadingZeros = True
+        Kind = dtkDate
+        TimeFormat = tf24
+        TimeDisplay = tdHMS
+        DateMode = dmComboBox
+        Date = 43619
+        Time = 0.345762534721871
+        UseDefaultSeparators = True
+        HideDateTimeParts = []
+        MonthNames = 'Long'
+      end
+      object edt_de: TDateTimePicker
+        Left = 280
+        Height = 23
+        Top = 24
+        Width = 100
+        CenturyFrom = 1941
+        MaxDate = 2958465
+        MinDate = -53780
+        AutoSize = False
+        TabOrder = 2
+        TrailingSeparator = False
+        TextForNullDate = 'NULL'
+        LeadingZeros = True
+        Kind = dtkTime
+        TimeFormat = tf24
+        TimeDisplay = tdHM
+        DateMode = dmComboBox
+        Date = 43619
+        Time = 0.346030208333104
+        UseDefaultSeparators = True
+        HideDateTimeParts = []
+        MonthNames = 'Long'
+      end
+      object edt_a: TDateTimePicker
+        Left = 392
+        Height = 23
+        Top = 24
+        Width = 100
+        CenturyFrom = 1941
+        MaxDate = 2958465
+        MinDate = -53780
+        AutoSize = False
+        TabOrder = 3
+        TrailingSeparator = False
+        TextForNullDate = 'NULL'
+        LeadingZeros = True
+        Kind = dtkTime
+        TimeFormat = tf24
+        TimeDisplay = tdHM
+        DateMode = dmComboBox
+        Date = 43619
+        Time = 0.346234409720637
+        UseDefaultSeparators = True
+        HideDateTimeParts = []
+        MonthNames = 'Long'
+      end
+      object lbl_ident: TLabel
+        Left = 16
+        Height = 15
+        Top = 0
+        Width = 140
+        AutoSize = False
+        Caption = 'Identification'
+        ParentColor = False
+      end
+    end
+    object pnl_contrat: TPanel
+      Left = 1
+      Height = 100
+      Top = 101
+      Width = 918
+      Align = alTop
+      ClientHeight = 100
+      ClientWidth = 918
+      TabOrder = 1
+      object lbl_contrat: TLabel
+        Left = 8
+        Height = 15
+        Top = 8
+        Width = 140
+        AutoSize = False
+        Caption = 'Contrat/site'
+        ParentColor = False
+      end
+      object lbl_num_contrat: TLabel
+        Left = 152
+        Height = 15
+        Top = 24
+        Width = 42
+        Caption = 'numéro'
+        ParentColor = False
+      end
+      object lbl_adresse: TLabel
+        Left = 240
+        Height = 15
+        Top = 24
+        Width = 77
+        Caption = 'adresse du site'
+        ParentColor = False
+      end
+      object lbl_client: TLabel
+        Left = 416
+        Height = 15
+        Top = 24
+        Width = 29
+        Caption = 'client'
+        ParentColor = False
+      end
+      object lbl_installateur: TLabel
+        Left = 520
+        Height = 15
+        Top = 24
+        Width = 58
+        Caption = 'installateur'
+        ParentColor = False
+      end
+      object edt_num_contrat: TEdit
+        Left = 128
+        Height = 23
+        Top = 40
+        Width = 100
+        AutoSize = False
+        CharCase = ecUppercase
+        TabOrder = 0
+      end
+      object mmo_adresse: TMemo
+        Left = 232
+        Height = 50
+        Top = 40
+        Width = 136
+        Lines.Strings = (
+          'mmo_adresse'
+        )
+        TabOrder = 1
+      end
+      object mmo_client: TMemo
+        Left = 376
+        Height = 50
+        Top = 40
+        Width = 112
+        Lines.Strings = (
+          'mmo_client'
+        )
+        TabOrder = 2
+      end
+      object mmo_installateur: TMemo
+        Left = 496
+        Height = 50
+        Top = 40
+        Width = 120
+        Lines.Strings = (
+          'mmo_installateur'
+        )
+        TabOrder = 3
+      end
+    end
+    object pnl_conseiller: TPanel
+      Left = 1
+      Height = 100
+      Top = 201
+      Width = 918
+      Align = alTop
+      ClientHeight = 100
+      ClientWidth = 918
+      TabOrder = 2
+      object lbl_conseiller: TLabel
+        Left = 11
+        Height = 15
+        Top = 15
+        Width = 140
+        AutoSize = False
+        Caption = 'Conseiller intervenant'
+        ParentColor = False
+      end
+      object edt_num_conseiller: TEdit
+        Left = 40
+        Height = 23
+        Top = 48
+        Width = 100
+        AutoSize = False
+        CharCase = ecUppercase
+        TabOrder = 0
+      end
+      object mmo_conseiller: TMemo
+        Left = 208
+        Height = 42
+        Top = 40
+        Width = 294
+        Lines.Strings = (
+          'mmo_conseiller'
+        )
+        TabOrder = 1
+      end
+    end
+    object pnl_facture: TPanel
+      Left = 1
+      Height = 318
+      Top = 301
+      Width = 918
+      Align = alClient
+      ClientHeight = 318
+      ClientWidth = 918
+      TabOrder = 3
+      object pnl_facture_titre: TPanel
+        Left = 1
+        Height = 50
+        Top = 1
+        Width = 916
+        Align = alTop
+        ClientHeight = 50
+        ClientWidth = 916
+        TabOrder = 0
+        object lbl_facture: TLabel
+          Left = 24
+          Height = 15
+          Top = 8
+          Width = 70
+          AutoSize = False
+          Caption = 'Facture'
+          ParentColor = False
+        end
+        object lbl_total: TLabel
+          Left = 96
+          Height = 15
+          Top = 24
+          Width = 32
+          Caption = 'Total :'
+          ParentColor = False
+        end
+        object edt_total: TEdit
+          Left = 136
+          Height = 23
+          Top = 21
+          Width = 100
+          TabOrder = 0
+        end
+      end
+      object pnl_facture_list: TPanel
+        Left = 1
+        Height = 266
+        Top = 51
+        Width = 410
+        Align = alLeft
+        TabOrder = 1
+      end
+      object pnl_facture_ajout: TPanel
+        Left = 411
+        Height = 266
+        Top = 51
+        Width = 506
+        Align = alClient
+        TabOrder = 2
+      end
+    end
+  end
+end

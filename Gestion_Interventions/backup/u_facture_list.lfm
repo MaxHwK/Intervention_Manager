@@ -1,0 +1,100 @@
+inherited f_facture_list: Tf_facture_list
+  Left = 241
+  Height = 298
+  Top = 557
+  Width = 400
+  Caption = 'f_facture_list'
+  ClientHeight = 298
+  ClientWidth = 400
+  inherited pnl_titre: TPanel
+    Width = 400
+    ClientWidth = 400
+    object lbl_titre: TLabel[0]
+      Left = 0
+      Height = 34
+      Top = 0
+      Width = 141
+      Align = alLeft
+      Caption = 'Montant de la facture'
+      ParentColor = False
+    end
+    object lbl_facture_total: TLabel[1]
+      Left = 141
+      Height = 34
+      Top = 0
+      Width = 70
+      Align = alLeft
+      AutoSize = False
+      Layout = tlCenter
+      ParentColor = False
+    end
+  end
+  inherited pnl_btn: TPanel
+    Top = 264
+    Width = 400
+    ClientWidth = 400
+    inherited pnl_btn_ligne: TPanel
+      Width = 1
+      ClientWidth = 1
+      inherited btn_line_detail: TSpeedButton
+        Left = -41
+      end
+      inherited btn_line_add: TSpeedButton
+        Left = -39
+        OnClick = btn_line_addClick
+      end
+      inherited btn_line_delete: TSpeedButton
+        Left = -41
+        OnClick = btn_line_deleteClick
+      end
+      inherited btn_line_edit: TSpeedButton
+        Left = -40
+      end
+    end
+  end
+  inherited pnl_affi: TPanel
+    Height = 230
+    Width = 400
+    ClientHeight = 230
+    ClientWidth = 400
+    inherited sg_liste: TStringGrid
+      Height = 230
+      Width = 400
+      Columns = <      
+        item
+          PickList.Strings = (          )
+          Title.Caption = 'code'
+          Width = 50
+        end      
+        item
+          PickList.Strings = (          )
+          Title.Caption = 'désignation'
+          Width = 120
+        end      
+        item
+          PickList.Strings = (          )
+          Title.Caption = 'tarif'
+        end      
+        item
+          PickList.Strings = (          )
+          Title.Caption = 'qté'
+        end      
+        item
+          PickList.Strings = (          )
+          Title.Caption = 'type'
+        end      
+        item
+          PickList.Strings = (          )
+          Title.Caption = 'montant'
+        end>
+      ColWidths = (
+        50
+        120
+        64
+        64
+        64
+        64
+      )
+    end
+  end
+end

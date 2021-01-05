@@ -1,0 +1,116 @@
+object f_accueil: Tf_accueil
+  Left = 368
+  Height = 800
+  Top = 132
+  Width = 1200
+  Caption = 'Accueil'
+  ClientHeight = 780
+  ClientWidth = 1200
+  Color = 15461355
+  Font.CharSet = ANSI_CHARSET
+  Font.Height = -16
+  Font.Name = 'Calibri'
+  Font.Pitch = fpVariable
+  Font.Quality = fqDraft
+  Menu = mnu_main
+  OnShow = FormShow
+  LCLVersion = '1.8.4.0'
+  object pnl_ariane: TPanel
+    Left = 0
+    Height = 30
+    Top = 0
+    Width = 1200
+    Align = alTop
+    Caption = 'fil d''ariane'
+    TabOrder = 0
+  end
+  object pnl_info: TPanel
+    Left = 0
+    Height = 30
+    Top = 750
+    Width = 1200
+    Align = alBottom
+    Caption = 'message d''information'
+    TabOrder = 1
+  end
+  object pnl_travail: TPanel
+    Left = 250
+    Height = 720
+    Top = 30
+    Width = 950
+    Align = alRight
+    Caption = 'zone de travail'
+    ClientHeight = 720
+    ClientWidth = 950
+    TabOrder = 2
+    object lbl_sat: TLabel
+      Left = 456
+      Height = 59
+      Top = 160
+      Width = 100
+      Caption = 'S.A.T.'
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -48
+      Font.Name = 'Calibri'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentColor = False
+      ParentFont = False
+    end
+    object lbl_appli: TLabel
+      Left = 328
+      Height = 177
+      Top = 272
+      Width = 338
+      Alignment = taCenter
+      Caption = 'application '#13#10'de gestion '#13#10'des interventions'
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -48
+      Font.Name = 'Calibri'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentColor = False
+      ParentFont = False
+    end
+  end
+  object pnl_selection: TPanel
+    Left = 0
+    Height = 720
+    Top = 30
+    Width = 250
+    Align = alClient
+    Caption = 'zone de sélection'
+    TabOrder = 3
+  end
+  object mnu_main: TMainMenu
+    left = 200
+    top = 56
+    object item_accueil: TMenuItem
+      Caption = 'Accueil'
+      OnClick = mnu_item_Click
+    end
+    object item_contrats: TMenuItem
+      Caption = 'Contrats'
+      object item_clients: TMenuItem
+        Caption = 'Clients'
+        OnClick = mnu_item_Click
+      end
+      object item_sites: TMenuItem
+        Caption = 'Sites'
+        OnClick = mnu_item_Click
+      end
+      object item_interv: TMenuItem
+        Caption = 'Interventions'
+        OnClick = mnu_item_Click
+      end
+    end
+    object item_prest: TMenuItem
+      Caption = 'Prestations'
+      OnClick = mnu_item_Click
+    end
+    object item_quitter: TMenuItem
+      Caption = 'Quitter'
+      OnClick = item_quitterClick
+    end
+  end
+end
