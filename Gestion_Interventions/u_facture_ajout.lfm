@@ -1,0 +1,88 @@
+object f_facture_ajout: Tf_facture_ajout
+  Left = 345
+  Height = 160
+  Top = 214
+  Width = 320
+  Caption = 'f_facture_ajout'
+  ClientHeight = 160
+  ClientWidth = 320
+  ParentFont = True
+  LCLVersion = '1.8.2.0'
+  object pnl_titre: TPanel
+    Left = 0
+    Height = 50
+    Top = 0
+    Width = 320
+    Align = alTop
+    Caption = 'Ajout d''une prestation à l''intervention'
+    TabOrder = 0
+  end
+  object pnl_detail: TPanel
+    Left = 0
+    Height = 110
+    Top = 50
+    Width = 320
+    Align = alClient
+    ClientHeight = 110
+    ClientWidth = 320
+    TabOrder = 1
+    object lbl_pres_code: TLabel
+      Left = 16
+      Height = 15
+      Top = 8
+      Width = 28
+      Caption = 'Code'
+      ParentColor = False
+    end
+    object lbl_pres_type: TLabel
+      Left = 16
+      Height = 15
+      Top = 56
+      Width = 102
+      Caption = 'Type de l''opération'
+      ParentColor = False
+    end
+    object cbo_pres_code: TComboBox
+      Left = 8
+      Height = 21
+      Top = 32
+      Width = 100
+      AutoComplete = True
+      AutoCompleteText = [cbactEnabled, cbactEndOfLineComplete, cbactSearchAscending]
+      ItemHeight = 15
+      OnCloseUp = cbo_pres_codeCloseUp
+      Style = csOwnerDrawFixed
+      TabOrder = 0
+    end
+    object cbo_pres_type: TComboBox
+      Left = 8
+      Height = 23
+      Top = 80
+      Width = 100
+      AutoComplete = True
+      AutoCompleteText = [cbactEnabled, cbactEndOfLineComplete, cbactSearchAscending]
+      ItemHeight = 15
+      OnCloseUp = cbo_pres_typeCloseUp
+      Style = csDropDownList
+      TabOrder = 1
+    end
+    object lbl_pres_qte: TLabel
+      Left = 192
+      Height = 15
+      Top = 24
+      Width = 46
+      Caption = 'Quantité'
+      ParentColor = False
+    end
+    object edt_pres_qte: TMaskEdit
+      Left = 176
+      Height = 23
+      Top = 48
+      Width = 80
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 2
+      SpaceChar = '_'
+    end
+  end
+end

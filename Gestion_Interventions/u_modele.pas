@@ -1,0 +1,155 @@
+unit u_modele;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, u_loaddataset;
+
+type
+Tmodele = class(TMySQL)
+   private
+   { private declarations }
+   public
+   { public declarations }
+   procedure open;
+   function  intervention_liste_tous : TLoadDataSet;
+   function  intervention_liste_num (num : string) : TLoadDataSet;
+   function  intervention_liste_periode (dt1, dt2 : string) : TLoadDataSet;
+   function  intervention_liste_cont (no_cont : string) : TLoadDataSet;
+   function  intervention_liste_interv (num, nom : string) : TLoadDataSet;
+   function  intervention_liste_client (num, nom : string) : TLoadDataSet;
+   function intervention_num (num : string) : TLoadDataSet;
+   function intervention_conseiller (num : string) : string;
+   function intervention_contrat (num : string) : string;
+   function intervention_contrat_adresse (num : string) : string;
+   function contrat_client (num : string) : string;
+   function contrat_conseiller (num : string) : string;
+   function intervention_facture (num : string) : TLoadDataSet;
+   function facture_tous : TLoadDataSet;
+   procedure intervention_delete (num_interv : string);
+   procedure intervention_insert (num_interv, num_contrat, date_interv, heure_arr, heure_dep : string);
+   procedure intervention_update (num_interv, num_contrat, date_interv, num_cons, heure_arr, heure_dep : string);
+   procedure intervention_facture_delete (num_interv : string);
+   procedure intervention_facture_insert (num_interv, code_prest : string);
+   procedure close;
+end;
+
+var
+     modele: Tmodele;
+implementation
+
+procedure Tmodele.open;
+begin
+      Bd_open ('devbdd.iutmetz.univ-lorraine.fr', 3306, 'giron12u_bd_SAT', 'giron12u_appli', '31804461', 'mysqld-5', 'libmysql64.dll');
+end;
+
+procedure Tmodele.close;
+begin
+      Bd_close;
+end;
+
+// toutes les interventions
+function Tmodele.intervention_liste_tous : TLoadDataSet;
+begin
+     result := load('sp_intervention_liste_tous',[]);
+end;
+
+// intervention id_int=num
+function Tmodele.intervention_liste_num (num : string) : TLoadDataSet;
+begin
+     result := load('sp_intervention_liste_num',[num]);
+end;
+
+// interventions qui se sont passées entre dt1 et dt2
+function Tmodele.intervention_liste_periode (dt1, dt2 : string) : TLoadDataSet;
+begin
+     result := load('sp_intervention_liste_periode',[dt1, dt2]);
+end;
+
+// interventions qui concernent les intervenants dont le n° conseiller contient la valeur contenue dans no_cons
+// ou le nom de l'intervenant contient la valeur contenue dans nom
+function Tmodele.intervention_liste_interv (num, nom : string) : TLoadDataSet;
+begin
+      result := load('sp_intervention_liste_interv',[num, nom]);
+end;
+
+// interventions qui concernent les clients no_cl
+function Tmodele.intervention_liste_client (num, nom : string) : TLoadDataSet;
+begin
+      result := load('sp_intervention_liste_client',[num, nom]);
+end;
+// interventions qui concernent les contrats no_cont
+function Tmodele.intervention_liste_cont (no_cont : string) : TLoadDataSet;
+begin
+      result := load('sp_intervention_liste_cont',[no_cont]);
+end;
+
+function Tmodele.intervention_num (num : string) : TLoadDataSet;
+begin
+     result := load('sp_intervention_num',[num]);
+end;
+function Tmodele.intervention_conseiller (num : string) : string;
+begin
+     load('sp_intervention_conseiller',[num], result);
+end;
+function Tmodele.intervention_contrat (num : string) : string;
+begin
+     load('sp_intervention_contrat',[num], result);
+end;
+function Tmodele.intervention_contrat_adresse (num : string) : string;
+begin
+     load('sp_intervention_contrat_adresse',[num], result);
+end;
+function Tmodele.contrat_client (num : string) : string;
+begin
+     load('sp_contrat_client',[num], result);
+end;
+function Tmodele.contrat_conseiller (num : string) : string;
+begin
+     load('sp_contrat_conseiller',[num], result);
+end;
+
+function Tmodele.intervention_facture (num : string) : TLoadDataSet;
+begin
+     result := load('sp_intervention_facture',[num]);
+end;
+
+function Tmodele.facture_tous : TLoadDataSet;
+begin
+     result := load('sp_facture_tous',[]);
+end;
+
+procedure Tmodele.intervention_delete (num_interv : string);
+begin
+     exec('sp_intervention_delete',[num_interv]);
+end;
+
+procedure Tmodele.intervention_insert (num_interv, num_contrat, date_interv, heure_arr, heure_dep : string);
+begin
+     exec('sp_intervention_insert',[num_interv, num_contrat, date_interv, heure_arr, heure_dep]);
+end;
+
+procedure Tmodele.intervention_update (num_interv, num_contrat, date_interv, num_cons, heure_arr, heure_dep : string);
+begin
+     exec('sp_intervention_update',[num_interv], [num_contrat, date_interv, num_cons, heure_arr, heure_dep]);
+end;
+
+procedure Tmodele.intervention_facture_delete (num_interv : string);
+begin
+     exec('sp_intervention_facture_delete',[num_interv]);
+end;
+
+procedure Tmodele.intervention_facture_insert (num_interv, code_prest : string);
+begin
+     exec('sp_intervention_facture_insert',[num_interv, code_prest]);
+end;
+
+begin
+     modele := TModele.Create;
+end.
+
+
+end.
+

@@ -1,0 +1,102 @@
+inherited f_list_intervention: Tf_list_intervention
+  Left = 508
+  Height = 720
+  Top = 208
+  Width = 920
+  Caption = 'f_list_intervention'
+  ClientHeight = 720
+  ClientWidth = 920
+  inherited pnl_titre: TPanel
+    Width = 920
+  end
+  inherited pnl_btn: TPanel
+    Top = 686
+    Width = 920
+    ClientWidth = 920
+    inherited pnl_btn_ligne: TPanel
+      Width = 521
+      ClientWidth = 521
+      inherited btn_line_detail: TSpeedButton
+        Left = 359
+        OnClick = btn_line_detailClick
+      end
+      inherited btn_line_add: TSpeedButton
+        Left = 400
+        OnClick = btn_line_addClick
+      end
+      inherited btn_line_delete: TSpeedButton
+        Left = 479
+        OnClick = btn_line_deleteClick
+      end
+      inherited btn_line_edit: TSpeedButton
+        Left = 439
+        OnClick = btn_line_editClick
+      end
+    end
+  end
+  inherited pnl_affi: TPanel
+    Height = 652
+    Width = 920
+    ClientHeight = 652
+    ClientWidth = 920
+    inherited sg_liste: TStringGrid
+      Height = 652
+      Width = 920
+      ColCount = 8
+      Columns = <      
+        item
+          PickList.Strings = (          )
+          Title.Caption = 'n°'
+          Width = 64
+        end      
+        item
+          PickList.Strings = (          )
+          Title.Caption = 'le'
+          Width = 100
+        end      
+        item
+          PickList.Strings = (          )
+          Title.Caption = ''
+          Width = 64
+        end      
+        item
+          PickList.Strings = (          )
+          Title.Caption = 'contrat'
+          Width = 100
+        end      
+        item
+          PickList.Strings = (          )
+          Title.Caption = ''
+          Width = 64
+        end      
+        item
+          PickList.Strings = (          )
+          Title.Caption = 'client'
+          Width = 100
+        end      
+        item
+          PickList.Strings = (          )
+          Title.Caption = ''
+          Width = 64
+        end      
+        item
+          PickList.Strings = (          )
+          Title.Caption = 'intervenant'
+          Width = 160
+        end>
+      ColWidths = (
+        64
+        100
+        64
+        100
+        64
+        100
+        64
+        160
+      )
+      Cells = (
+        0
+      )
+    end
+  end
+end
